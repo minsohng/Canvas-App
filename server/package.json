@@ -1,0 +1,27 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "Create a single-user whiteboard drawing application using HTML5 Canvas API.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx ts-node server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minsohng/HTML5-Canvas-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minsohng/HTML5-Canvas-App/issues"
+  },
+  "homepage": "https://github.com/minsohng/HTML5-Canvas-App#readme",
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.11.1",
+    "express": "^4.17.1",
+    "typescript": "^3.8.3"
+  }
+}
