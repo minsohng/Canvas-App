@@ -1,52 +1,25 @@
-// let isDrawing = false
-// let x = 0
-// let y = 0
-// let width = window.innerWidth;
-// let height = window.innerHeight;
+import cv from '../helpers/canvas.js'
+import { drawLine } from '../helpers/draw.js'
 
-// const map = {}
-// let object = []
-
-// const canvas = document.getElementById('canvas')
-// canvas.width = width
-// canvas.height = height
-// const ctx = canvas.getContext('2d')
-
-// const rect = canvas.getBoundingClientRect();
-
-
-// const drawLine = (ctx, x1, y1, x2, y2, color) => {
-//   ctx.beginPath();
-//   ctx.strokeStyle = color;
-//   ctx.lineWidth = 1;
-//   ctx.moveTo(x1, y1);
-//   ctx.lineTo(x2, y2);
-//   ctx.stroke();
-//   ctx.closePath();
-// }
-
-// export default canvas
-
-
-// // canvas.addEventListener('click', e => {
-// // 	if (!isDrawing) {
-// // 		x = e.clientX - rect.left
-// // 		y = e.clientY - rect.top
-// // 		console.log(x, y)
-// // 		for (let key in map) {
-// // 			for (let item of map[key]) {
-// // 				if (item.x === x && item.y === y) {
-// // 					console.log("You clicked on object")
-// // 					selectObject(ctx, x, y, map[key])
-// // 					break
-// // 				}
-// // 			}
-// // 		}
-// // 	}
-// // })
-
-// // const selectObject = (ctx, x, y, obj) => {
-// // 	for (let i = 0; i < obj.length; i++) {
-// // 		drawLine(ctx, x, y, obj[i].x, obj[i].y, 'red')
-// // 	}
-// // }
+export const freehand = {
+  mousedown: (e) => {
+    cv.x = e.clientX - cv.rect.left
+    cv.y = e.clientY - cv.rect.top
+    cv.isDrawing = true
+  },
+  mousemove: (e) => {
+    if (cv.isDrawing === true) {
+      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
+      cv.x = e.clientX - cv.rect.left
+      cv.y = e.clientY - cv.rect.top
+    }
+  },
+  mouseup: (e) => {
+    if (cv.isDrawing === true) {
+      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
+      cv.x = 0
+      cv.y = 0
+      cv.isDrawing = false
+    }
+  },
+}
