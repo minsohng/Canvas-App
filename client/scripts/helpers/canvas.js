@@ -14,7 +14,7 @@ class Canvas {
   //  x: x_coordinate
   //  y: y_coordinate
   // }
-  drawingObjects = {}
+  drawingMap = {}
 
   init() {
     this.canvas = document.getElementById('canvas')
