@@ -8,6 +8,14 @@ class Canvas {
   height = window.innerHeight
   isDrawing = false
 
+  // hashmap to store drawings on canvas
+  // drawings = coordinates[]
+  // type coordinates = {
+  //  x: x_coordinate
+  //  y: y_coordinate
+  // }
+  drawingObjects = {}
+
   init() {
     this.canvas = document.getElementById('canvas')
     this.canvas.width = this.width
