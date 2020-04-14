@@ -11,7 +11,7 @@ This application has only been tested in Chrome.
 To run this application, pull the source and run the following command in `/server`
 
 ```bash
-npm start
+npm install && npm start
 ```
 
 open up `http://localhost:3000/` in your Chrome
