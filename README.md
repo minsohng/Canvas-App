@@ -1,6 +1,6 @@
-# HTML5 Canvas project
+# HTML5 Canvas application
 
-Create a single-user whiteboard drawing application using HTML5 Canvas API.
+a single-user whiteboard drawing application using HTML5 Canvas API.
 
 ## Requirements
 
@@ -24,14 +24,3 @@ open up `http://localhost:3000/` in your Chrome
 * draw rectangles (point and move cursor and release)
   * shape should be visible while dragging
 * can select 8 different colours
-
-## Stretch Goals
-
-* can drag objects around
-* can resize
-* can save to localstorage
-* multi-select objects to drag
-
-## External Libraries
-
-* https://github.com/BennyAlex/material-design-inspired-color-picker
