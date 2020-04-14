@@ -51,7 +51,6 @@ const slope = (a, b) => {
   if (a.x === b.x) {
     return null
   }
-
   return (b.y - a.y) / (b.x - a.x)
 }
 
@@ -60,6 +59,37 @@ const intercept = (point, slope) => {
     // vertical line
     return point.x
   }
-
   return point.y - slope * point.x
+}
+
+// get two intersection between two points if they are to extend north and south
+// example: input = (0,0) and (1,1)
+//          output = (0,1) and (1,0)
+const getPerpendicularIntersectionsBetweenTwo = (A, B) => {
+  return [
+    {
+      x: A.x, 
+      y: B.y
+    },
+    {
+      x: B.x,
+      y: A.y
+    },
+  ]
+}
+
+export const strokeRectangles = (ctx, dragStartX, dragStartY, dragEndX, dragEndY, color) => {
+  const [vertex1, vertex2] = getPerpendicularIntersectionsBetweenTwo({
+    x: dragStartX,
+    y: dragStartY,
+  }, 
+  {
+    x: dragEndX,
+    y: dragEndY,
+  })
+
+  drawLine(ctx, dragStartX, dragStartY, vertex1.x, vertex1.y, color)
+  drawLine(ctx, dragStartX, dragStartY, vertex2.x, vertex2.y, color)
+  drawLine(ctx, vertex1.x, vertex1.y, dragEndX, dragEndY, color)
+  drawLine(ctx, vertex2.x, vertex2.y, dragEndX, dragEndY, color)
 }
