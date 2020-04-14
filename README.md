@@ -2,6 +2,12 @@
 
 Create a single-user whiteboard drawing application using HTML5 Canvas API.
 
+## Usage
+To run this application, pull the source and run the following command in `/server`
+```bash
+npm start
+```
+
 ## Requirement
 * draw freehand path (point and holddown mouse button and move to draw)
 * draw a straight line between two points(point and move cursor and release) 
