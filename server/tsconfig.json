@@ -6,6 +6,6 @@
     "rootDir": ".",
     "lib": ["es2015", "esnext"],
     "sourceMap": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
 }

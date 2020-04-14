@@ -28,6 +28,7 @@ export const rectangles = {
         y: e.clientY - cv.rect.top,
       })
 
+      // FIXME: get appropriate coordinates for rectangles
       // save drawing as object in drawingMap
       // const startCoord = drawing[0]
       // const endCoord = drawing[1]

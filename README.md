@@ -4,7 +4,7 @@ a single-user whiteboard drawing application using HTML5 Canvas API.
 
 ## Requirements
 
-This application has only been tested in Chrome.
+This application has only been tested in Mac/Chrome.
 
 ## Usage
 
