@@ -18,7 +18,7 @@ export const straightLine = {
   mousemove: (e) => {
     if (cv.isDrawing === true) {
       cv.restoreSnapshot()
-      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
+      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, cv.color)
     }
   },
   mouseup: (e) => {
@@ -36,7 +36,7 @@ export const straightLine = {
       
       cv.restoreSnapshot()
 
-      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
+      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, cv.color)
 
       // restore global variables to initial state
       cv.x = 0

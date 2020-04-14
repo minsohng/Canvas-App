@@ -4,6 +4,10 @@ import { freehand, straightLine, rectangles } from '../actions/index.js'
 const freehandBtn = document.getElementById('freehand')
 const lineBtn = document.getElementById('straightLine')
 const rectanglesBtn = document.getElementById('rectangles')
+const colorPicker = document.getElementsByClassName('btn-group')[0].childNodes
+const colors = Array.prototype.filter.call(colorPicker, color => {
+  return color.nodeName === 'BUTTON'
+})
 
 freehandBtn.addEventListener('click', () => {
   removeOtherEventListeners('freehand')
@@ -24,6 +28,13 @@ rectanglesBtn.addEventListener('click', () => {
   cv.canvas.addEventListener('mousedown', rectangles.mousedown)
   cv.canvas.addEventListener('mousemove', rectangles.mousemove)
   cv.canvas.addEventListener('mouseup', rectangles.mouseup)
+})
+
+colors.forEach(el => {
+  el.addEventListener('click', () => {
+    const color = el.style.backgroundColor
+    cv.setPenColor(color)
+  })
 })
 
 const removeOtherEventListeners = (btnId) => {
