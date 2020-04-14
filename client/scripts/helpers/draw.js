@@ -15,8 +15,7 @@ export const getCoordsBetweenTwo = (A, B) => {
   const b = intercept(A, m)
 
   const coords = []
-  // console.log("A.x", A.x)
-  // console.log("B.x", B.x)
+
   if (A.x === B.x) {
     for (let y = A.y; y <= B.y; y++) {
       coords.push({
@@ -29,7 +28,6 @@ export const getCoordsBetweenTwo = (A, B) => {
   if (A.x > B.x) {
     for (let x = B.x; x <= A.x; x++) {
       const y = m * x + b
-      // console.log(x, y)
       coords.push({
         x, 
         y,
@@ -40,14 +38,12 @@ export const getCoordsBetweenTwo = (A, B) => {
   if (A.x < B.x) {
     for (let x = A.x; x <= B.x; x++) {
       const y = m * x + b
-      // console.log(x, y)
       coords.push({
         x, 
         y,
       })
     }
   }
-  console.log(coords)
   return coords
 }
 
