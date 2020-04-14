@@ -7,6 +7,7 @@ class Canvas {
   width = window.innerWidth
   height = window.innerHeight
   isDrawing = false
+  color = 'black'
 
   // hashmap to store drawings on canvas
   // drawings = coordinates[]
@@ -42,6 +43,10 @@ class Canvas {
       throw new Error("snapshot does not exist")
     }
     this.ctx.putImageData(this.snapshot, 0, 0)
+  }
+
+  setPenColor(color) {
+    this.color = color
   }
 }
 

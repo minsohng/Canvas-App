@@ -15,7 +15,7 @@ export const freehand = {
   },
   mousemove: (e) => {
     if (cv.isDrawing === true) {
-      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
+      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, cv.color)
       cv.x = e.clientX - cv.rect.left
       cv.y = e.clientY - cv.rect.top
       drawing.push({
@@ -26,7 +26,7 @@ export const freehand = {
   },
   mouseup: (e) => {
     if (cv.isDrawing === true) {
-      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
+      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, cv.color)
       cv.drawingMap[`${cv.x}, ${cv.y}`] = drawing
       cv.x = 0
       cv.y = 0

@@ -3,16 +3,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Canvas App</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 </head>
   
 <body>
-  <button type="button" id="freehand">Freehand</button>
-  <button type="button" id="straightLine">StraightLine</button>
-  <button type="button" id="rectangles">Rectangles</button>
-  <canvas id="canvas"></canvas>
+  <div class="container-fluid">
+    <button type="button" class="btn btn-primary" id="freehand">Freehand</button>
+    <button type="button" class="btn btn-primary" id="straightLine">StraightLine</button>
+    <button type="button" class="btn btn-primary" id="rectangles">Rectangles</button>
+  </div>
+  <div class="container-fluid">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-secondary" style="background-color: red"></button>
+      <button type="button" class="btn btn-secondary" style="background-color: crimson"></button>
+      <button type="button" class="btn btn-secondary" style="background-color: coral"></button>
+      <button type="button" class="btn btn-secondary" style="background-color: cyan"></button>
+      <button type="button" class="btn btn-secondary" style="background-color: darkblue"></button>
+      <button type="button" class="btn btn-secondary" style="background-color: darkgreen"></button>
+      <button type="button" class="btn btn-secondary" style="background-color: darkkhaki"></button>
+      <button type="button" class="btn btn-secondary" style="background-color: magenta"></button>
+    </div>
+  </div>
+  <canvas id="canvas" style="margin: 1em; border:1px solid #000000;"></canvas>
   <script type="module" src="./scripts/helpers/buttons.js"></script>
 </body>
 </html>
