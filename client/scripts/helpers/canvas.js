@@ -14,7 +14,9 @@ class Canvas {
   //  x: x_coordinate
   //  y: y_coordinate
   // }
-  drawingObjects = {}
+  drawingMap = {}
+
+  snapshot = undefined
 
   init() {
     this.canvas = document.getElementById('canvas')
@@ -22,6 +24,24 @@ class Canvas {
     this.canvas.height = this.height
     this.ctx = canvas.getContext('2d')
     this.rect = canvas.getBoundingClientRect()
+  }
+
+  takeSnapshot() {
+    if (!this.ctx) {
+      throw new Error("context does not exist")
+    }
+    this.snapshot = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height)
+  }
+
+  restoreSnapshot() {
+    if (!this.ctx) {
+      throw new Error("context does not exist")
+    }
+
+    if (!this.snapshot) {
+      throw new Error("snapshot does not exist")
+    }
+    this.ctx.putImageData(this.snapshot, 0, 0)
   }
 }
 
