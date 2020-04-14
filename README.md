@@ -14,6 +14,8 @@ To run this application, pull the source and run the following command in `/serv
 npm start
 ```
 
+open up `http://localhost:3000/` in your Chrome
+
 ## Features
 
 * draw freehand path (point and holddown mouse button and move to draw)
