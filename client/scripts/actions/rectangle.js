@@ -1,5 +1,5 @@
 import cv from '../helpers/canvas.js'
-import { drawLine } from '../helpers/draw.js'
+import { strokeRectangles } from '../helpers/draw.js'
 
 // array that stores start and end coordinates
 let drawing = []
@@ -18,7 +18,7 @@ export const rectangles = {
   mousemove: (e) => {
     if (cv.isDrawing === true) {
       cv.restoreSnapshot()
-      // drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
+      strokeRectangles(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
     }
   },
   mouseup: (e) => {
@@ -29,14 +29,14 @@ export const rectangles = {
       })
 
       // save drawing as object in drawingMap
-      const startCoord = drawing[0]
-      const endCoord = drawing[1]
-      const coords = getCoordsBetweenTwo(startCoord, endCoord)
-      cv.drawingMap[`${cv.x}, ${cv.y}`] = coords
+      // const startCoord = drawing[0]
+      // const endCoord = drawing[1]
+      // const coords = getCoordsBetweenTwo(startCoord, endCoord)
+      // cv.drawingMap[`${cv.x}, ${cv.y}`] = coords
       
       cv.restoreSnapshot()
 
-      drawLine(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
+      strokeRectangles(cv.ctx, cv.x, cv.y, e.clientX - cv.rect.left, e.clientY - cv.rect.top, 'black')
 
       // restore global variables to initial state
       cv.x = 0

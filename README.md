@@ -29,3 +29,7 @@ npm start
 * can resize
 * can save to localstorage
 * multi-select objects to drag
+
+## External Libraries
+
+* https://github.com/BennyAlex/material-design-inspired-color-picker
